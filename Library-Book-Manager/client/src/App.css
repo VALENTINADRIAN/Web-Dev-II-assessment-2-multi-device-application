@@ -1,0 +1,184 @@
+/* Normal appearance */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.header p {
+  color: #7f8c8d;
+}
+
+/* mobile design where everything is stacked in column */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-card, .list-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+.books-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.book-item {
+  border: 1px solid #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.book-item.returned {
+  opacity: 0.7;
+  background-color: #f9fff9;
+}
+
+.book-item h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.book-item p {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.badge-orange {
+  background-color: #ffeaa7;
+  color: #d35400;
+}
+
+.badge-green {
+  background-color: #dff9fb;
+  color: #27ae60;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.return-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #95a5a6;
+}
+
+/* media query for computer screen changing to side by side laytout*/
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .form-card {
+    flex: 1; /* 1 part space */
+    position: sticky;
+    top: 20px;
+  }
+  
+  .list-card {
+    flex: 2; /* 2 parts space */
+  }
+
+  .book-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+}
